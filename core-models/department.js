@@ -65,7 +65,7 @@ http
         });
       });
     }
-    // get all student
+    // get all department
     else if (method == "GET" && url == "/department") {
       console.log("in");
       fs.readFile("department.txt", "utf-8", (error, data) => {
@@ -116,7 +116,7 @@ http
         }
       });
     }
-    // update student
+    // update department
     else if (method == "PUT" && url.startsWith("/department/")) {
       let body = "";
       req.on("data", (data) => {
@@ -179,7 +179,7 @@ http
         });
       });
     }
-    //search for a student by ID
+    //search for a department by ID
     else if (method == "GET" && url.startsWith("/departmentById/")) {
       const id = +url.split("/")[2];
       fs.readFile("department.txt", "utf-8", (error, data) => {
